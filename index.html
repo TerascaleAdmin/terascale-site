@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
 <title>Terascale Analytics | Big Data Analytics for Economic Modeling</title>
 <meta name="description" content="Terascale Analytics designs and implements large scale statistical, econometric, optimization, and simulation models for high-stakes litigation and regulatory work. Cayman Enterprise City, Cayman Islands.">
 <link rel="icon" href="img/logo.png">
@@ -15,7 +16,7 @@
     --rule: rgba(169, 180, 208, .25);
   }
   * { box-sizing: border-box; }
-  html { font-size: 17px; }
+  html { font-size: 17px; color-scheme: dark; }
   body {
     margin: 0;
     background: var(--navy);
@@ -35,14 +36,16 @@
       url("img/background.jpg") center / cover no-repeat;
   }
   .wrap { width: 100%; max-width: 54rem; margin: 0 auto; }
+  /* The white backing is part of the image file itself (logo-panel.png), so a browser's
+     forced dark mode can't turn it transparent or dark and hide the navy lettering. */
   .logo-panel {
     display: inline-block;
-    background: #fff;
     border-radius: 14px;
-    padding: 12px 22px;
+    overflow: hidden;
     box-shadow: 0 10px 40px rgba(0,0,0,.45);
+    forced-color-adjust: none;
   }
-  .logo-panel img { display: block; width: min(320px, 70vw); height: auto; }
+  .logo-panel img { display: block; width: min(365px, 85vw); height: auto; background: #fff; }
   h1 {
     font-size: clamp(1.9rem, 5vw, 3rem);
     line-height: 1.15;
@@ -62,7 +65,7 @@
 <body>
 <header class="hero">
   <div class="wrap">
-    <span class="logo-panel"><img src="img/logo.png" alt="Terascale Analytics"></span>
+    <span class="logo-panel"><img src="img/logo-panel.png" alt="Terascale Analytics" width="1140" height="469"></span>
     <h1>Analytics for Complex Economic Analysis</h1>
     <p class="lead">We design and implement large scale statistical, econometric, optimization, and simulation models for use in high-stakes, contentious environments such as consumer and commercial litigation and regulatory inquiries.</p>
   </div>
